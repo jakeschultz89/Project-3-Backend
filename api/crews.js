@@ -22,13 +22,13 @@ const index = async (req, res) => {
 }
 
 const show = async (req, res) => {
-    const { id } = req.params;
+    const { name } = req.params;
     try {
         // look for crew based on name
         const crew = await Crew.findByName(name);
         res.json({ crew });
     } catch (error) {
-        console.log('Error inside of /api/crews/:id');
+        console.log('Error inside of /api/crews/:name');
         console.log(error);
         return res.status(400).json({ message: 'Crew not found. Try again...' });
     }

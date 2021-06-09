@@ -22,13 +22,13 @@ const index = async (req, res) => {
 }
 
 const show = async (req, res) => {
-    const { id } = req.params;
+    const { name } = req.params;
     try {
         // look for dragon based on name
         const dragon = await Dragon.findByName(name);
         res.json({ dragon });
     } catch (error) {
-        console.log('Error inside of /api/dragons/:id');
+        console.log('Error inside of /api/dragons/:name');
         console.log(error);
         return res.status(400).json({ message: 'Dragon not found. Try again...' });
     }

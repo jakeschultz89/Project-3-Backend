@@ -12,8 +12,7 @@ const dragonSchema = new Schema({
     required: true
   },
   first_flight: {
-    type: String,
-    default: null
+    type: String
   },
   flickr_images: {
     type: [
