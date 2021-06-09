@@ -7,6 +7,7 @@ const passport = require('passport');
 const PORT = process.env.PORT || 8000;
 
 // API
+const astros = require('astros');
 const crews = require('./api/crews')
 const dragons = require('./api/dragons');
 const rockets = require('./api/rockets');
@@ -26,14 +27,15 @@ app.get('/', (req, res) => {
 });
 
 // Routes
+app.use('./api/astros', astros);
 app.use('/api/crews', crews);
-// app.use('/api/dragons', dragons);
-// app.use('/api/rockets', rockets);
+app.use('/api/dragons', dragons);
+app.use('/api/rockets', rockets);
 
 app.get('/*', (req, res) => {
     res.status(404).json({ message: 'Data not found' });
 });
 
 app.listen(PORT, () => {
-    console.log(`Server is listening 🎧 on port: ${PORT}`);
+    console.log(`SpaceX API Clone server is live on port: ${PORT}`);
 });

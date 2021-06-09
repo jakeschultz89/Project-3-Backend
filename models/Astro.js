@@ -1,18 +1,21 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const crewSchema = new Schema({
+const astroSchema = new Schema({
   name: {
     type: String
   },
-  agency: {
+  age: {
+    type: Number
+  },
+  favAstronaut: {
     type: String
   },
-  image: {
+  favSpaceMovie: {
     type: String
   },
-  wikipedia: {
-    type: String
+  question : {
+      type: String
   },
   userSchema: {
     type: Schema.Types.ObjectId,
@@ -20,5 +23,5 @@ const crewSchema = new Schema({
   }
 });
 
-const Crew = mongoose.model('Crew', crewSchema);
-module.exports = Crew;
+const Astro = mongoose.model('Astro', astroSchema);
+module.exports = Astro;
