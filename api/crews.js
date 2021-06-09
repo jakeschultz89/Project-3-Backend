@@ -6,13 +6,13 @@ const passport = require('passport');
 
 
 // Models
-const { Book } = require('../models');
+const { Crew } = require('../models');
 
 // Controllers
 const index = async (req, res) => {
-    console.log('inside of /api/books');
+    console.log('inside of /api/crews');
     try {
-        const allBooks = await Book.find({});
+        const allCrews = await Crew.find({});
 
         res.json({ books: allBooks });
     } catch (error) {

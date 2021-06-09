@@ -24,4 +24,5 @@ const crewSchema = new Schema({
   }
 });
 
+const Crew = mongoose.model('Crew', crewSchema);
 module.exports = Crew;

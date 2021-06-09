@@ -1,7 +1,8 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
-var Rocket Schema = new Schema({
-  Crew Schema: {
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
+const rocketSchema = new Schema({
+  crewSchema: {
     type: Schema.Types.ObjectId,
     ref: 'Crew Schema '
   },
@@ -27,3 +28,6 @@ var Rocket Schema = new Schema({
     type: String
   }
 });
+
+const Rocket = mongoose.model('Rocket', rocketSchema);
+module.exports = Rocket;

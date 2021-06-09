@@ -32,4 +32,5 @@ const dragonSchema = new Schema({
   }
 });
 
-module.exports = dragonSchema;
+const Dragon = mongoose.model('Dragon', dragonSchema);
+module.exports = Dragon;
