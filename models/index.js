@@ -20,12 +20,15 @@ db.on('error', (error) => {
 });
 
 // Import all of your models
+const Astro = require('./Astro')
 const Crew = require('./Crew');
 const Dragon = require('./Dragon');
 const Rocket = require('./Rocket');
 
+
 // export all the models from this file
 module.exports = {
+    Astro,
     Crew,
     Dragon,
     Rocket
