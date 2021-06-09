@@ -7,7 +7,7 @@ const passport = require('passport');
 const PORT = process.env.PORT || 8000;
 
 // API
-const astros = require('astros');
+const astros = require('./api/astros');
 const crews = require('./api/crews')
 const dragons = require('./api/dragons');
 const rockets = require('./api/rockets');
