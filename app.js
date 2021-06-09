@@ -27,13 +27,13 @@ app.get('/', (req, res) => {
 
 // Routes
 app.use('/api/crews', crews);
-// app.use('/api/dragons', dragons);
-// app.use('/api/rockets', rockets);
+app.use('/api/dragons', dragons);
+app.use('/api/rockets', rockets);
 
 app.get('/*', (req, res) => {
     res.status(404).json({ message: 'Data not found' });
 });
 
 app.listen(PORT, () => {
-    console.log(`Server is listening 🎧 on port: ${PORT}`);
+    console.log(`SpaceX API Clone server is live on port: ${PORT}`);
 });

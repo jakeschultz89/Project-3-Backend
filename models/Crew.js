@@ -3,20 +3,16 @@ const Schema = mongoose.Schema;
 
 const crewSchema = new Schema({
   name: {
-    type: String,
-    default: null
+    type: String
   },
   agency: {
-    type: String,
-    default: null
+    type: String
   },
   image: {
-    type: String,
-    default: null
+    type: String
   },
   wikipedia: {
-    type: String,
-    default: null
+    type: String
   },
   userSchema: {
     type: Schema.Types.ObjectId,
