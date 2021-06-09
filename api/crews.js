@@ -13,7 +13,6 @@ const index = async (req, res) => {
     console.log('inside of /api/crews');
     try {
         const allCrews = await Crew.find({});
-
         res.json({ books: allBooks });
     } catch (error) {
         console.log('Error inside of /api/books');
