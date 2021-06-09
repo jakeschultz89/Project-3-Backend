@@ -4,7 +4,6 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 
-
 // Models
 const { Crew } = require('../models');
 
@@ -18,7 +17,7 @@ const index = async (req, res) => {
     } catch (error) {
         console.log('Error inside of /api/crews');
         console.log(error);
-        return res.status(400).json({ message: 'Crews not found. Please try again.' });
+        return res.status(400).json({ message: 'Crews not found. Please try again!!' });
     }
 }
 
@@ -88,14 +87,13 @@ router.get('/test', (req, res) => {
 
 // GET -> /api/crews/
 router.get('/', passport.authenticate('jwt', { session: false }), index); 
-// GET -> /api/crews/:id
-router.get('/:id', passport.authenticate('jwt', { session: false }), show);
+// GET -> /api/crews/:name
+router.get('/:name', passport.authenticate('jwt', { session: false }), show);
 // POST -> /api/crews
 router.post('/', passport.authenticate('jwt', { session: false }), create);
 // PUT -> /api/crews
 router.put('/', passport.authenticate('jwt', { session: false }), update);
-// DELETE => /api/crews/:id
-router.delete('/:id', passport.authenticate('jwt', { session: false }), deleteCrew);
-
+// DELETE => /api/crews/:name
+router.delete('/:name', passport.authenticate('jwt', { session: false }), deleteCrew);
 
 module.exports = router;
