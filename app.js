@@ -7,13 +7,16 @@ const passport = require('passport');
 const PORT = process.env.PORT || 8000;
 
 // API
-const users = require('./api/users');
 const astros = require('./api/astros');
 const crews = require('./api/crews')
 const dragons = require('./api/dragons');
 const rockets = require('./api/rockets');
+<<<<<<< HEAD
 // const starlinks = require('./api/starlinks');
 
+=======
+const users = require('./api/users');
+>>>>>>> 5f337f67068bac1d4a1195542f19d61b99e328b3
 
 // Middleware
 app.use(cors());
@@ -26,7 +29,7 @@ require('./config/passport')(passport);
 
 // Home route
 app.get('/', (req, res) => {
-    res.status(200).json({ message: 'Smile, you are being watched by the Backend Engineering Team' });
+    res.status(200).json({ message: 'Smile, Elon Musk is watching you 👀' });
 });
 
 // Routes
@@ -34,7 +37,6 @@ app.use('/api/astros', astros);
 app.use('/api/crews', crews);
 app.use('/api/dragons', dragons);
 app.use('/api/rockets', rockets);
-// app.use('/api/starlinks', starlinks);
 app.use('/api/users', users);
 
 app.get('/*', (req, res) => {
