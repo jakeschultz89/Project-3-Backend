@@ -25,10 +25,7 @@ const dragonSchema = new Schema({
   description: {
     type: String
   },
-  userSchema: {
-    type: Schema.Types.ObjectId,
-    ref: 'User Schema'
-  }
+
 });
 
 const Dragon = mongoose.model('Dragon', dragonSchema);
