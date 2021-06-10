@@ -51,11 +51,11 @@ const create = async (req, res) => {
 const update = async (req, res) => {
     console.log(req.body);
     try {
-const updatedAstro = await Astro.update({ title: req.body.title }, req.body); // updating the book
+const updatedAstro = await Astro.update({ title: req.body.title }, req.body); // updating the astro
 const astro = await Astro.findOne({ title: req.body.title });
 
 console.log(updatedAstro); // { n: 1, nModified: 0, ok: 1 }
-console.log(astro); // a book object
+console.log(astro); // a astro object
 
 res.redirect(`/api/astros/${astro.id}`);
 } catch (error) {
