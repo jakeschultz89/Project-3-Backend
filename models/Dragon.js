@@ -12,8 +12,7 @@ const dragonSchema = new Schema({
     required: true
   },
   first_flight: {
-    type: String,
-    default: null
+    type: String
   },
   flickr_images: {
     type: [
@@ -25,10 +24,6 @@ const dragonSchema = new Schema({
   },
   description: {
     type: String
-  },
-  userSchema: {
-    type: Schema.Types.ObjectId,
-    ref: 'User Schema'
   }
 });
 
