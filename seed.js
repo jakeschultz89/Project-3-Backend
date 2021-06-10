@@ -145,6 +145,49 @@ const { Rocket } = require('./models');
 //     console.log(results);
 // });
 
+
+Rocket.create([
+    {
+        "name": "Falcon 1",
+        "first_flight": "2006-03-24",
+        "flickr_images": "https://imgur.com/DaCfMsj.jpg",
+        "country": "Republic of the Marshall Islands",
+        "company": "SpaceX",
+        "wikipedia": "https://en.wikipedia.org/wiki/Falcon_1",
+        "description": "The Falcon 1 was an expendable launch system privately developed and manufactured by SpaceX during 2006-2009. On 28 September 2008, Falcon 1 became the first privately-developed liquid-fuel launch vehicle to go into orbit around the Earth."
+    },
+    {
+        "name": "Falcon 9",
+        "first_flight": "2010-06-04",
+        "flickr_images": "https://farm1.staticflickr.com/745/32394687645_a9c54a34ef_b.jpg",
+        "country": "United States",
+        "company": "SpaceX",
+        "wikipedia": "https://en.wikipedia.org/wiki/Falcon_9",
+        "description": "Falcon 9 is a two-stage rocket designed and manufactured by SpaceX for the reliable and safe transport of satellites and the Dragon spacecraft into orbit."
+    },
+    {
+        "name": "Falcon Heavy",
+        "first_flight": "2018-02-06",
+        "flickr_images": "https://farm5.staticflickr.com/4711/40126461411_aabc643fd8_b.jpg",
+        "country": "United States",
+        "company": "SpaceX",
+        "wikipedia": "https://en.wikipedia.org/wiki/Falcon_Heavy",
+        "description": "With the ability to lift into orbit over 54 metric tons (119,000 lb)--a mass equivalent to a 737 jetliner loaded with passengers, crew, luggage and fuel--Falcon Heavy can lift more than twice the payload of the next closest operational vehicle, the Delta IV Heavy, at one-third the cost."
+    },
+    {
+        "name": "Starship",
+        "first_flight": "2021-12-01",
+        "flickr_images": "https://live.staticflickr.com/65535/48954138922_9c42173f08_b.jpg",
+        "country": "United States",
+        "company": "SpaceX",
+        "wikipedia": "https://en.wikipedia.org/wiki/SpaceX_Starship",
+        "description": "Starship and Super Heavy Rocket represent a fully reusable transportation system designed to service all Earth orbit needs as well as the Moon and Mars. This two-stage vehicle — composed of the Super Heavy rocket (booster) and Starship (ship) — will eventually replace Falcon 9, Falcon Heavy and Dragon."
+    }
+], (err, results) => {
+    console.log(results);
+});
+
+
 // Dragon.create([
 //     {
 //         "name": "Dragon 1",
@@ -206,3 +249,4 @@ const { Rocket } = require('./models');
 // ], (err, results) => {
 //     console.log(results);
 // });
+
