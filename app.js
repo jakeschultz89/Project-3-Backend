@@ -40,5 +40,5 @@ app.get('/*', (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`SpaceX API Clone server is live on port: ${PORT}`);
+    console.log(`Elon Musk is watching you 👀 : ${PORT}`);
 });
