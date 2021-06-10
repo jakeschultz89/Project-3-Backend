@@ -22,13 +22,13 @@ const index = async (req, res) => {
 }
 
 const show = async (req, res) => {
-    const { name } = req.params;
+    const { id } = req.params;
     try {
-        // look for astro based on name
-        const astro = await Astro.findByName(name);
+        // look for astro based on id
+        const astro = await Astro.findById(id);
         res.json({ astro });
     } catch (error) {
-        console.log('Error inside of /api/astros/:name');
+        console.log('Error inside of /api/astros/:id');
         console.log(error);
         return res.status(400).json({ message: 'Astro not found. Try again...' });
     }
@@ -51,13 +51,13 @@ const create = async (req, res) => {
 const update = async (req, res) => {
     console.log(req.body);
     try {
-const updatedAstro = await Astro.update({ title: req.body.title }, req.body); // updating the astro
-const astro = await Astro.findOne({ title: req.body.title });
+const updatedAstro = await Astro.update({ id: req.body.id }, req.body); // updating the astro
+const astro = await Astro.findById({ id: req.body.id });
 
 console.log(updatedAstro); // { n: 1, nModified: 0, ok: 1 }
 console.log(astro); // a astro object
 
-res.redirect(`/api/astros/${astro.id}`);
+res.send(`/api/astros/${astro.id}`);
 } catch (error) {
 console.log("Error inside of UPDATE route");
 console.log(error);
@@ -91,11 +91,13 @@ router.get('/test', (req, res) => {
 // GET -> /api/astros/
 router.get('/', index); 
 // GET -> /api/astros/:name
-router.get('/:name', passport.authenticate('jwt', { session: false }), show);
+router.get('/:id', show);
+// router.get('/:id', passport.authenticate('jwt', { session: false }), show);
 // POST -> /api/astros
 router.post('/', passport.authenticate('jwt', { session: false }), create);
 
-router.put("/", passport.authenticate("jwt", { session: false }), update);
+router.put("/:id", passport.authenticate("jwt", { session: false }), update);
 
 router.delete("/:id", passport.authenticate("jwt", { session: false }), deleteAstro);
 module.exports = router;
+
