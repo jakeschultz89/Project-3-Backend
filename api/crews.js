@@ -4,7 +4,6 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 
-
 // Models
 const { Crew } = require('../models');
 
@@ -14,99 +13,87 @@ const index = async (req, res) => {
     try {
         const allCrews = await Crew.find({});
 
-        res.json({ books: allBooks });
+        res.json({ crews: allCrews });
     } catch (error) {
-        console.log('Error inside of /api/books');
+        console.log('Error inside of /api/crews');
         console.log(error);
-        return res.status(400).json({ message: 'Books not found. Please try again.' });
+        return res.status(400).json({ message: 'Crews not found. Please try again!!' });
     }
 }
 
 const show = async (req, res) => {
-    const { id } = req.params;
+    const { name } = req.params;
     try {
-        // look for book based on id
-        const book = await Book.findById(id);
-        res.json({ book });
+        // look for crew based on name
+        const crew = await Crew.findByName(name);
+        res.json({ crew });
     } catch (error) {
-        console.log('Error inside of /api/books/:id');
+        console.log('Error inside of /api/crews/:name');
         console.log(error);
-        return res.status(400).json({ message: 'Book not found. Try again...' });
+        return res.status(400).json({ message: 'Crew not found. Try again...' });
     }
 }
 
 const create = async (req, res) => {
-    const { title, author, price, pages, isbn, genre } = req.body;
+    const { name, agency, image, wikipedia } = req.body;
 
     try {
-        const newBook = await Book.create({ title, author, price, pages, isbn, genre });
-        console.log('new book created', newBook);
-        res.json({ book: newBook });
+        const newCrew = await Crew.create({ name, agency, image, wikipedia });
+        console.log('new crew created', newCrew);
+        res.json({ crew: newCrew });
     } catch (error) {
-       console.log('Error inside of POST of /api/books');
+       console.log('Error inside of POST of /api/crews');
        console.log(error);
-       return res.status(400).json({ message: 'Book was not created. Please try again...' }); 
+       return res.status(400).json({ message: 'Crew was not created. Please try again...' }); 
     }
 }
 
 const update = async (req, res) => {
     console.log(req.body);
     try {
-        // const book = await Book.findOne({ title: req.body.title });
-        // console.log(book);
+        const updatedCrew = await Crew.update({ name: req.body.name }, req.body); // updating the crew
+        const crew = await Crew.findOne({ name: req.body.name });
 
-        // book.author = req.body.author;
-        // book.pages = req.body.pages;
-        // book.isbn = req.body.isbn;
-        // book.genre = req.body.genre;
-        // book.price = req.body.price;
+        console.log(updatedCrew); // { n: 1, nModified: 0, ok: 1 }
+        console.log(crew); // a crew object 
 
-        // // save the new book info
-        // const savedBook = await book.save();
-
-        const updatedBook = await Book.update({ title: req.body.title }, req.body); // updating the book
-        const book = await Book.findOne({ title: req.body.title });
-
-        console.log(updatedBook); // { n: 1, nModified: 0, ok: 1 }
-        console.log(book); // a book object 
-
-        res.redirect(`/api/books/${book.id}`);
+        res.redirect(`/api/crews/${crew.name}`);
 
     } catch (error) {
         console.log('Error inside of UPDATE route');
         console.log(error);
-        return res.status(400).json({ message: 'Book could not be updated. Please try again...' });
+        return res.status(400).json({ message: 'Crew could not be updated. Please try again...' });
     }
 }
 
-const deleteBook = async (req, res) => {
-    const { id } = req.params;
+const deleteCrew = async (req, res) => {
+    const { name } = req.params;
     try {
-        console.log(id);
-        const result = await Book.findByIdAndRemove(id);
+        console.log(name);
+        const result = await Crew.findByNameAndRemove(name);
         console.log(result);
-        res.redirect('/api/books');
+        res.redirect('/api/crews');
     } catch (error) {
         console.log('inside of DELETE route');
         console.log(error);
-        return res.status(400).json({ message: 'Book was not deleted. Please try again...' });
+        return res.status(400).json({ message: 'Crew was not deleted. Please try again...' });
     }
 }
 
-// GET api/books/test (Public)
+// GET api/crews/test (Public)
 router.get('/test', (req, res) => {
-    res.json({ msg: 'Books endpoint OK!'});
+    res.json({ msg: 'Crews endpoint OK!'});
 });
 
-// GET -> /api/books/
+// GET -> /api/crews/
 router.get('/', passport.authenticate('jwt', { session: false }), index); 
-// GET -> /api/books/:id
-router.get('/:id', passport.authenticate('jwt', { session: false }), show);
-// POST -> /api/books
+// GET -> /api/crews/:name
+router.get('/:name', passport.authenticate('jwt', { session: false }), show);
+// POST -> /api/crews
 router.post('/', passport.authenticate('jwt', { session: false }), create);
-// PUT -> /api/books
+// PUT -> /api/crews
 router.put('/', passport.authenticate('jwt', { session: false }), update);
-// DELETE => /api/books/:id
-router.delete('/:id', passport.authenticate('jwt', { session: false }), deleteBook);
+// DELETE => /api/crews/:name
+router.delete('/:name', passport.authenticate('jwt', { session: false }), deleteCrew);
 
 module.exports = router;
