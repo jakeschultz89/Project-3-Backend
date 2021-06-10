@@ -89,7 +89,7 @@ router.get('/test', (req, res) => {
 });
 
 // GET -> /api/astros/
-router.get('/', passport.authenticate('jwt', { session: false }), index); 
+router.get('/', index); 
 // GET -> /api/astros/:name
 router.get('/:name', passport.authenticate('jwt', { session: false }), show);
 // POST -> /api/astros
