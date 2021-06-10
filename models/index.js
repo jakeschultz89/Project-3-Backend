@@ -24,6 +24,8 @@ const Astro = require('./Astro')
 const Crew = require('./Crew');
 const Dragon = require('./Dragon');
 const Rocket = require('./Rocket');
+// const Starlink = require('./Starlink');
+const User = require('./User');
 
 
 // export all the models from this file
@@ -31,5 +33,7 @@ module.exports = {
     Astro,
     Crew,
     Dragon,
-    Rocket
+    Rocket,
+    // Starlink,
+    User
 }

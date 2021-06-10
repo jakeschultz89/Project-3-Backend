@@ -17,9 +17,9 @@ const astroSchema = new Schema({
   question : {
       type: String
   },
-  userSchema: {
-    type: Schema.Types.ObjectId,
-    ref: 'User Schema '
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
   }
 });
 

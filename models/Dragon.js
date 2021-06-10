@@ -24,10 +24,6 @@ const dragonSchema = new Schema({
   },
   description: {
     type: String
-  },
-  userSchema: {
-    type: Schema.Types.ObjectId,
-    ref: 'User Schema'
   }
 });
 

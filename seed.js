@@ -2,6 +2,7 @@ const { Astro } = require('./models');
 const { Crew } = require('./models');
 const { Dragon } = require('./models');
 const { Rocket } = require('./models');
+const { Starlink } = require('./models');
 
 // Astro.create([
 //     {
@@ -206,3 +207,9 @@ const { Rocket } = require('./models');
 // ], (err, results) => {
 //     console.log(results);
 // });
+
+Starlink.create([
+
+], (err, results) => {
+    console.log(results);
+});

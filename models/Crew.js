@@ -13,10 +13,6 @@ const crewSchema = new Schema({
   },
   wikipedia: {
     type: String
-  },
-  userSchema: {
-    type: Schema.Types.ObjectId,
-    ref: 'User Schema '
   }
 });
 
