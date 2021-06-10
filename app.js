@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
 });
 
 // Routes
-app.use('./api/astros', astros);
+app.use('/api/astros', astros);
 app.use('/api/crews', crews);
 app.use('/api/dragons', dragons);
 app.use('/api/rockets', rockets);

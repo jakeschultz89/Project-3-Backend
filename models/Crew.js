@@ -14,10 +14,7 @@ const crewSchema = new Schema({
   wikipedia: {
     type: String
   },
-  userSchema: {
-    type: Schema.Types.ObjectId,
-    ref: 'User Schema '
-  }
+
 });
 
 const Crew = mongoose.model('Crew', crewSchema);
