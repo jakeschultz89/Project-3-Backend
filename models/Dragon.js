@@ -24,8 +24,7 @@ const dragonSchema = new Schema({
   },
   description: {
     type: String
-  },
-
+  }
 });
 
 const Dragon = mongoose.model('Dragon', dragonSchema);

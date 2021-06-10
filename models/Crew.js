@@ -13,8 +13,7 @@ const crewSchema = new Schema({
   },
   wikipedia: {
     type: String
-  },
-
+  }
 });
 
 const Crew = mongoose.model('Crew', crewSchema);
