@@ -20,6 +20,7 @@ db.on('error', (error) => {
 });
 
 // Import all of your models
+const User = require('./User')
 const Astro = require('./Astro')
 const Crew = require('./Crew');
 const Dragon = require('./Dragon');
@@ -28,8 +29,9 @@ const Rocket = require('./Rocket');
 
 // export all the models from this file
 module.exports = {
+    User,
     Astro,
     Crew,
     Dragon,
-    Rocket
+    Rocket 
 }
