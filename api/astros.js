@@ -48,6 +48,41 @@ const create = async (req, res) => {
     }
 }
 
+const update = async (req, res) => {
+    console.log(req.body);
+    try {
+const updatedAstro = await Astro.update({ title: req.body.title }, req.body); // updating the book
+const astro = await Astro.findOne({ title: req.body.title });
+
+console.log(updatedAstro); // { n: 1, nModified: 0, ok: 1 }
+console.log(astro); // a book object
+
+res.redirect(`/api/astros/${astro.id}`);
+} catch (error) {
+console.log("Error inside of UPDATE route");
+console.log(error);
+return res
+  .status(400)
+  .json({ message: "Astro could not be updated. Please try again..." });
+}
+};
+
+const deleteAstro = async (req, res) => {
+const { id } = req.params;
+try {
+console.log(id);
+const result = await Astro.findByIdAndRemove(id);
+console.log(result);
+res.redirect("/api/astros");
+} catch (error) {
+console.log("inside of DELETE route");
+console.log(error);
+return res
+  .status(400)
+  .json({ message: "Astro was not deleted. Please try again..." });
+}
+};
+
 // GET api/astros/test (Public)
 router.get('/test', (req, res) => {
     res.json({ msg: 'Astros endpoint OK!'});
@@ -60,4 +95,7 @@ router.get('/:name', passport.authenticate('jwt', { session: false }), show);
 // POST -> /api/astros
 router.post('/', passport.authenticate('jwt', { session: false }), create);
 
+router.put("/", passport.authenticate("jwt", { session: false }), update);
+
+router.delete("/:id", passport.authenticate("jwt", { session: false }), deleteAstro);
 module.exports = router;
