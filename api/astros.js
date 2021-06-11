@@ -69,9 +69,7 @@ const update = async (req, res) => {
     } catch (error) {
       console.log("Error inside of UPDATE route");
       console.log(error);
-      res
-        .status(400)
-        .json({ message: "Astro could not be updated. Please try again..." });
+      res.status(400).json({ message: "Astro could not be updated. Please try again..." });
     }
   };
 
