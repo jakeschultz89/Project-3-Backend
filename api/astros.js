@@ -39,6 +39,7 @@ const show = async (req, res) => {
 
 const create = async (req, res) => {
   const { name, age, favAstronaut, favSpaceMovie } = req.body;
+  console.log('Here is a user', req.user);
 
   try {
     const newAstro = await Astro.create({
@@ -46,6 +47,7 @@ const create = async (req, res) => {
       age,
       favAstronaut,
       favSpaceMovie,
+      user: req.user._id
     });
     console.log("new astro created", newAstro);
     res.json({ astro: newAstro });
