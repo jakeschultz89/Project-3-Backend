@@ -10,7 +10,9 @@ const PORT = process.env.PORT || 8000;
 const astros = require('./api/astros');
 const crews = require('./api/crews')
 const dragons = require('./api/dragons');
+
 const rockets = require('./api/rockets');
+
 const users = require('./api/users');
 
 // Middleware
@@ -39,5 +41,5 @@ app.get('/*', (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`SpaceX API Clone server is live on port: ${PORT}`);
+    console.log(`Elon Musk is watching you 👀 : ${PORT}`);
 });

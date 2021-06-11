@@ -24,6 +24,7 @@ const index = async (req, res) => {
 };
 
 const show = async (req, res) => {
+  
   const { id } = req.params;
   try {
     // look for astro based on name
@@ -60,19 +61,6 @@ const create = async (req, res) => {
 const update = async (req, res) => {
   //     console.log(req.body);
   try {
-    // const updatedAstro = await Astro.update({ title: req.body.title }, req.body); // updating the book
-    // const astro = await Astro.findOne({ title: req.body.title });
-
-    // console.log(updatedAstro); // { n: 1, nModified: 0, ok: 1 }
-    // console.log(astro); // a book object
-
-    // res.redirect(`/api/astros/${astro.id}`);
-    // } catch (error) {
-    // console.log("Error inside of UPDATE route");
-    // console.log(error);
-    // return res
-    //   .status(400)
-    //   .json({ message: "Astro could not be updated. Please try again..." });
     const updatedAstro = await Astro.updateOne({ id: req.body.id }, req.body);
     const astro = await Astro.findOne({ id: req.body.id });
 
@@ -87,6 +75,7 @@ const update = async (req, res) => {
       .status(400)
       .json({ message: "Astro could not be updated. Please try again..." });
   }
+
 };
 
 const deleteAstro = async (req, res) => {
@@ -111,13 +100,16 @@ router.get("/test", (req, res) => {
 });
 
 // GET -> /api/astros/
+
 router.get("/", passport.authenticate("jwt", { session: false }), index);
 // GET -> /api/astros/:name
 router.get("/:id", passport.authenticate("jwt", { session: false }), show);
+
 // POST -> /api/astros
 router.post("/", passport.authenticate("jwt", { session: false }), create);
 
-router.put("/", passport.authenticate("jwt", { session: false }), update);
+router.put("/:id", passport.authenticate("jwt", { session: false }), update);
+
 
 router.delete(
   "/:id",
