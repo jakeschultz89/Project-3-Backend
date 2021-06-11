@@ -7,32 +7,65 @@ Astro.create([
     {
        "name": "Jake Schultz",
        "age": 31,
-       "favAstronaut": "Buzz Lightyear",
-       "favSpaceMovie": "Star Wars"
+       "favAstronaut": "The Doctor",
+       "favSpaceMovie": "Star Wars",
+       "question": "I am qualified to be an astronaut because I am small and fit inside any rocket. I have also seen every Star Wars movie at least 20 times."
     },
     {
         "name": "Vinny Vilasboa",
         "age": 25,
         "favAstronaut": "Elon Musk",
-        "favSpaceMovie": "Interstellar"
+        "favSpaceMovie": "Interstellar",
+        "question": "I can punch aliens in the face!",
      },
      {
         "name": "Brandon Hall",
         "age": 24,
         "favAstronaut": "Niel Armstrong",
-        "favSpaceMovie": "Spaceballs"
+        "favSpaceMovie": "Spaceballs",
+        "question": "I am Elon Musk's number one sub on Twitch!"
      },
      {
         "name": "Jordan Wright",
         "age": 28,
         "favAstronaut": "Woody",
-        "favSpaceMovie": "The Martian"
+        "favSpaceMovie": "The Martian",
+        "question": "I am a professional hacker and can hack into X Æ A-Xii's bank account."
      },
      {
         "name": "Josh Smith",
         "age": 49001,
         "favAstronaut": "Baby Yoda",
-        "favSpaceMovie": "Alien vs Predator"
+        "favSpaceMovie": "Alien vs Predator",
+        "question": "I am already the overlord of the sea, so why not make me overlord of space as well?"
+     },
+     {
+        "name": "Rome Bell",
+        "age": 33,
+        "favAstronaut": "Lance Armstrong",
+        "favSpaceMovie": "Space Jam 3: Rise of the Coders",
+        "question": "I am probably way too tall to become an astronaut but I can dunk on every alien."
+     },
+     {
+        "name": "Paula Bannerman",
+        "age": 27,
+        "favAstronaut": "Michael Collins",
+        "favSpaceMovie": "Spaceballs",
+        "question": "I will remind everyone to eat lunch!"
+     },
+     {
+        "name": "Brian Krabec",
+        "age": 24,
+        "favAstronaut": "Thanos",
+        "favSpaceMovie": "Spaceballs 2",
+        "question": "I have a cool bird and will bring him with me to space."
+     },
+     {
+        "name": "Omar Steven Munoz",
+        "age": 31,
+        "favAstronaut": "Space Frogs",
+        "favSpaceMovie": "Toy Story 2",
+        "question": "I was in the Marines so my tan belt MCMAP can help fight off aliens."
      },
 ], (err, results) => {
         console.log(results);
@@ -166,43 +199,43 @@ Dragon.create([
     console.log(results);
 });
 
-// Rocket.create([
-//     {
-//         "name": "Falcon 1",
-//         "first_flight": "2006-03-24",
-//         "flickr_images": "https://imgur.com/DaCfMsj.jpg",
-//         "country": "Republic of the Marshall Islands",
-//         "company": "SpaceX",
-//         "wikipedia": "https://en.wikipedia.org/wiki/Falcon_1",
-//         "description": "The Falcon 1 was an expendable launch system privately developed and manufactured by SpaceX during 2006-2009. On 28 September 2008, Falcon 1 became the first privately-developed liquid-fuel launch vehicle to go into orbit around the Earth."
-//     },
-//     {
-//         "name": "Falcon 9",
-//         "first_flight": "2010-06-04",
-//         "flickr_images": "https://farm1.staticflickr.com/745/32394687645_a9c54a34ef_b.jpg",
-//         "country": "United States",
-//         "company": "SpaceX",
-//         "wikipedia": "https://en.wikipedia.org/wiki/Falcon_9",
-//         "description": "Falcon 9 is a two-stage rocket designed and manufactured by SpaceX for the reliable and safe transport of satellites and the Dragon spacecraft into orbit."
-//     },
-//     {
-//         "name": "Falcon Heavy",
-//         "first_flight": "2018-02-06",
-//         "flickr_images": "https://farm5.staticflickr.com/4711/40126461411_aabc643fd8_b.jpg",
-//         "country": "United States",
-//         "company": "SpaceX",
-//         "wikipedia": "https://en.wikipedia.org/wiki/Falcon_Heavy",
-//         "description": "With the ability to lift into orbit over 54 metric tons (119,000 lb)--a mass equivalent to a 737 jetliner loaded with passengers, crew, luggage and fuel--Falcon Heavy can lift more than twice the payload of the next closest operational vehicle, the Delta IV Heavy, at one-third the cost."
-//     },
-//     {
-//         "name": "Starship",
-//         "first_flight": "2021-12-01",
-//         "flickr_images": "https://live.staticflickr.com/65535/48954138922_9c42173f08_b.jpg",
-//         "country": "United States",
-//         "company": "SpaceX",
-//         "wikipedia": "https://en.wikipedia.org/wiki/SpaceX_Starship",
-//         "description": "Starship and Super Heavy Rocket represent a fully reusable transportation system designed to service all Earth orbit needs as well as the Moon and Mars. This two-stage vehicle — composed of the Super Heavy rocket (booster) and Starship (ship) — will eventually replace Falcon 9, Falcon Heavy and Dragon."
-//     }
-// ], (err, results) => {
-//     console.log(results);
-// });
+Rocket.create([
+    {
+        "name": "Falcon 1",
+        "first_flight": "2006-03-24",
+        "flickr_images": "https://imgur.com/DaCfMsj.jpg",
+        "country": "Republic of the Marshall Islands",
+        "company": "SpaceX",
+        "wikipedia": "https://en.wikipedia.org/wiki/Falcon_1",
+        "description": "The Falcon 1 was an expendable launch system privately developed and manufactured by SpaceX during 2006-2009. On 28 September 2008, Falcon 1 became the first privately-developed liquid-fuel launch vehicle to go into orbit around the Earth."
+    },
+    {
+        "name": "Falcon 9",
+        "first_flight": "2010-06-04",
+        "flickr_images": "https://farm1.staticflickr.com/745/32394687645_a9c54a34ef_b.jpg",
+        "country": "United States",
+        "company": "SpaceX",
+        "wikipedia": "https://en.wikipedia.org/wiki/Falcon_9",
+        "description": "Falcon 9 is a two-stage rocket designed and manufactured by SpaceX for the reliable and safe transport of satellites and the Dragon spacecraft into orbit."
+    },
+    {
+        "name": "Falcon Heavy",
+        "first_flight": "2018-02-06",
+        "flickr_images": "https://farm5.staticflickr.com/4711/40126461411_aabc643fd8_b.jpg",
+        "country": "United States",
+        "company": "SpaceX",
+        "wikipedia": "https://en.wikipedia.org/wiki/Falcon_Heavy",
+        "description": "With the ability to lift into orbit over 54 metric tons (119,000 lb)--a mass equivalent to a 737 jetliner loaded with passengers, crew, luggage and fuel--Falcon Heavy can lift more than twice the payload of the next closest operational vehicle, the Delta IV Heavy, at one-third the cost."
+    },
+    {
+        "name": "Starship",
+        "first_flight": "2021-12-01",
+        "flickr_images": "https://live.staticflickr.com/65535/48954138922_9c42173f08_b.jpg",
+        "country": "United States",
+        "company": "SpaceX",
+        "wikipedia": "https://en.wikipedia.org/wiki/SpaceX_Starship",
+        "description": "Starship and Super Heavy Rocket represent a fully reusable transportation system designed to service all Earth orbit needs as well as the Moon and Mars. This two-stage vehicle — composed of the Super Heavy rocket (booster) and Starship (ship) — will eventually replace Falcon 9, Falcon Heavy and Dragon."
+    }
+], (err, results) => {
+    console.log(results);
+});

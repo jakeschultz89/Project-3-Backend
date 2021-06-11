@@ -34,66 +34,12 @@ const show = async (req, res) => {
     }
 }
 
-const create = async (req, res) => {
-    const { name, agency, image, wikipedia } = req.body;
-
-    try {
-        const newCrew = await Crew.create({ name, agency, image, wikipedia });
-        console.log('new crew created', newCrew);
-        res.json({ crew: newCrew });
-    } catch (error) {
-       console.log('Error inside of POST of /api/crews');
-       console.log(error);
-       return res.status(400).json({ message: 'Crew was not created. Please try again...' }); 
-    }
-}
-
-const update = async (req, res) => {
-    console.log(req.body);
-    try {
-        const updatedCrew = await Crew.update({ name: req.body.name }, req.body); // updating the crew
-        const crew = await Crew.findOne({ name: req.body.name });
-
-        console.log(updatedCrew); // { n: 1, nModified: 0, ok: 1 }
-        console.log(crew); // a crew object 
-
-        res.redirect(`/api/crews/${crew.name}`);
-
-    } catch (error) {
-        console.log('Error inside of UPDATE route');
-        console.log(error);
-        return res.status(400).json({ message: 'Crew could not be updated. Please try again...' });
-    }
-}
-
-const deleteCrew = async (req, res) => {
-    const { name } = req.params;
-    try {
-        console.log(name);
-        const result = await Crew.findByNameAndRemove(name);
-        console.log(result);
-        res.redirect('/api/crews');
-    } catch (error) {
-        console.log('inside of DELETE route');
-        console.log(error);
-        return res.status(400).json({ message: 'Crew was not deleted. Please try again...' });
-    }
-}
-
 // GET api/crews/test (Public)
-router.get('/test', (req, res) => {
-    res.json({ msg: 'Crews endpoint OK!'});
+router.get('/test', (req, res) => {res.json({ msg: 'Crews endpoint OK!'});
 });
-
 // GET -> /api/crews/
 router.get('/', passport.authenticate('jwt', { session: false }), index); 
 // GET -> /api/crews/:name
 router.get('/:name', passport.authenticate('jwt', { session: false }), show);
-// POST -> /api/crews
-router.post('/', passport.authenticate('jwt', { session: false }), create);
-// PUT -> /api/crews
-router.put('/', passport.authenticate('jwt', { session: false }), update);
-// DELETE => /api/crews/:name
-router.delete('/:name', passport.authenticate('jwt', { session: false }), deleteCrew);
 
 module.exports = router;
