@@ -6,7 +6,10 @@ const cors = require('cors');
 const passport = require('passport');
 const PORT = process.env.PORT || 8000;
 
-let server = app.listen(app.get("port"));
+let server = app.listen(app.get("port"), () => {
+    console.log(`✅ PORT: ${app.get("port")} 🌟`);
+    console.log(`http://localhost:${app.get("port")}`)
+});
 
 // API
 const astros = require('./api/astros');
@@ -40,8 +43,4 @@ app.get('/*', (req, res) => {
     res.status(404).json({ message: 'Data not found' });
 });
 
-app.set("port", process.env.PORT || 9000);
-
-// app.listen(PORT, () => {
-//     console.log(`Elon Musk is watching you 👀 : ${PORT}`);
-// });
+app.set("port", process.env.PORT || 8080);
