@@ -105,7 +105,6 @@ router.post("/", passport.authenticate("jwt", { session: false }), create);
 
 router.put("/:id", passport.authenticate("jwt", { session: false }), update);
 
-
 router.delete(
   "/:id",
   passport.authenticate("jwt", { session: false }),
