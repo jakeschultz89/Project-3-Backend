@@ -6,7 +6,7 @@ const cors = require('cors');
 const passport = require('passport');
 const PORT = process.env.PORT || 8000;
 
-let server = app.listen(app.get("port"), () => {
+app.listen(app.get("port"), () => {
     console.log(`✅ PORT: ${app.get("port")} 🌟`);
     console.log(`http://localhost:${app.get("port")}`)
 });
