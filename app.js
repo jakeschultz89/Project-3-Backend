@@ -6,6 +6,8 @@ const cors = require('cors');
 const passport = require('passport');
 const PORT = process.env.PORT || 8000;
 
+let server = app.listen(app.get("port"));
+
 // API
 const astros = require('./api/astros');
 const crews = require('./api/crews')
@@ -38,6 +40,8 @@ app.get('/*', (req, res) => {
     res.status(404).json({ message: 'Data not found' });
 });
 
-app.listen(PORT, () => {
-    console.log(`Elon Musk is watching you 👀 : ${PORT}`);
-});
+app.set("port", process.env.PORT || 9000);
+
+// app.listen(PORT, () => {
+//     console.log(`Elon Musk is watching you 👀 : ${PORT}`);
+// });
