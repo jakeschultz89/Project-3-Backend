@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const astroSchema = new Schema({
   name: {
-    type: String
+    type: String,
   },
   age: {
     type: Number

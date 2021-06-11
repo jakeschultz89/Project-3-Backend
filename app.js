@@ -11,12 +11,7 @@ const astros = require('./api/astros');
 const crews = require('./api/crews')
 const dragons = require('./api/dragons');
 const rockets = require('./api/rockets');
-<<<<<<< HEAD
-// const starlinks = require('./api/starlinks');
-
-=======
 const users = require('./api/users');
->>>>>>> 5f337f67068bac1d4a1195542f19d61b99e328b3
 
 // Middleware
 app.use(cors());
