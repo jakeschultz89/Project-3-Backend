@@ -59,24 +59,19 @@ const create = async (req, res) => {
 };
 
 const update = async (req, res) => {
-  //     console.log(req.body);
-  try {
-    const updatedAstro = await Astro.updateOne({ id: req.body.id }, req.body);
-    const astro = await Astro.findOne({ id: req.body.id });
-
-    console.log(updatedAstro);
-    console.log(astro);
-
-    res.redirect(`/api/astros/${astro.id}`);
-  } catch (error) {
-    console.log("Error inside of UPDATE route");
-    console.log(error);
-    res
-      .status(400)
-      .json({ message: "Astro could not be updated. Please try again..." });
-  }
-
-};
+    //     console.log(req.body);
+    try {
+      const updatedAstro = await Astro.findByIdAndUpdate(req.params.id, req.body);
+      const astro = await Astro.findById(req.params.id);
+      console.log(updatedAstro);
+      console.log(astro);
+      res.redirect(`/api/astros/${req.params.id}`);
+    } catch (error) {
+      console.log("Error inside of UPDATE route");
+      console.log(error);
+      res.status(400).json({ message: "Astro could not be updated. Please try again..." });
+    }
+  };
 
 const deleteAstro = async (req, res) => {
   const { id } = req.params;
