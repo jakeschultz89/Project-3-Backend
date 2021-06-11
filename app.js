@@ -10,7 +10,9 @@ const PORT = process.env.PORT || 8000;
 const astros = require('./api/astros');
 const crews = require('./api/crews')
 const dragons = require('./api/dragons');
-const rockets = require('./api/rockets')
+
+const rockets = require('./api/rockets');
+
 const users = require('./api/users');
 
 // Middleware
