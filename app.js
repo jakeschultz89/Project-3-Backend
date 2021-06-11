@@ -6,10 +6,10 @@ const cors = require('cors');
 const passport = require('passport');
 const PORT = process.env.PORT || 8000;
 
-app.listen(app.get("port"), () => {
-    console.log(`✅ PORT: ${app.get("port")} 🌟`);
-    console.log(`http://localhost:${app.get("port")}`)
-});
+// app.listen(app.get("port"), () => {
+//     console.log(`✅ PORT: ${app.get("port")} 🌟`);
+//     console.log(`http://localhost:${app.get("port")}`)
+// });
 
 // API
 const astros = require('./api/astros');
@@ -29,9 +29,8 @@ require('./config/passport')(passport);
 
 // Home route
 app.get('/', (req, res) => {
-    res.status(200).json({ message: 'Smile, Elon Musk is watching you 👀' });
+    res.send("this is a test")
 });
-
 // Routes
 app.use('/api/astros', astros);
 app.use('/api/crews', crews);
@@ -43,4 +42,9 @@ app.get('/*', (req, res) => {
     res.status(404).json({ message: 'Data not found' });
 });
 
+// app.set("port", process.env.PORT || 8080);
 app.set("port", process.env.PORT || 8080);
+app.listen(app.get("port"), () => {
+    console.log(`✅ PORT: ${app.get("port")} 🌟`);
+    console.log(`http://localhost:${app.get("port")}`)
+});
