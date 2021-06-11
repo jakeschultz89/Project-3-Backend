@@ -35,14 +35,11 @@ const show = async (req, res) => {
 }
 
 // GET api/dragons/test (Public)
-router.get('/test', (req, res) => {
-    res.json({ msg: 'Dragons endpoint OK!'});
+router.get('/test', (req, res) => {res.json({ msg: 'Dragons endpoint OK!'});
 });
-
 // GET -> /api/dragons/
 router.get('/', passport.authenticate('jwt', { session: false }), index); 
 // GET -> /api/dragons/:name
 router.get('/:name', passport.authenticate('jwt', { session: false }), show);
-
 
 module.exports = router;

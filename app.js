@@ -6,11 +6,16 @@ const cors = require('cors');
 const passport = require('passport');
 const PORT = process.env.PORT || 8000;
 
+app.listen(app.get("port"), () => {
+    console.log(`✅ PORT: ${app.get("port")} 🌟`);
+    console.log(`http://localhost:${app.get("port")}`)
+});
+
 // API
 const astros = require('./api/astros');
 const crews = require('./api/crews')
 const dragons = require('./api/dragons');
-const rockets = require('./api/rockets')
+const rockets = require('./api/rockets');
 const users = require('./api/users');
 
 // Middleware
@@ -38,6 +43,4 @@ app.get('/*', (req, res) => {
     res.status(404).json({ message: 'Data not found' });
 });
 
-app.listen(PORT, () => {
-    console.log(`Elon Musk is watching you 👀 : ${PORT}`);
-});
+app.set("port", process.env.PORT || 8080);
