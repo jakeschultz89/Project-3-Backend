@@ -21,7 +21,7 @@ Astro.create([
      {
         "name": "Brandon Hall",
         "age": 24,
-        "favAstronaut": "Niel Armstrong",
+        "favAstronaut": "Neil Armstrong",
         "favSpaceMovie": "Spaceballs",
         "question": "I am Elon Musk's number one sub on Twitch!"
      },
