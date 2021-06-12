@@ -67,7 +67,8 @@ const update = async (req, res) => {
       const astro = await Astro.findById(req.params.id);
       console.log(updatedAstro);
       console.log(astro);
-      res.redirect(`/api/astros/${req.params.id}`);
+      res.json({ astro: updatedAstro });
+    //   res.redirect(`/api/astros/${req.params.id}`);
     } catch (error) {
       console.log("Error inside of UPDATE route");
       console.log(error);
