@@ -86,7 +86,7 @@ your preferred browser.
 http://localhost:8080
 ```
 
-> our backend is also deployed on heroku at ```https://fakex-react.herokuapp.com/```
+> our backend is also deployed on heroku at ```https://afternoon-lowlands-89410.herokuapp.com/```
 
 > In order to see the full app please view our front end ```https://github.com/brandonhall96/react-project-3```
 > you will find additional information there concerning this app.
