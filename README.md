@@ -67,6 +67,7 @@ Run the command (mongod) first
 ```sh
 Then follow up with the (mongo) command in a seperate terminal window
 ```
+![](https://media.giphy.com/media/JZd6XgaIkIUJMbuxUP/giphy.gif)
 
 ## Code Snippets to be Proud of 
 
