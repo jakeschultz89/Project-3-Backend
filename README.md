@@ -1,6 +1,7 @@
+![Issues](https://img.shields.io/github/issues/jakeschultz89/Project-3-Backend)![Forks](https://img.shields.io/github/forks/jakeschultz89/Project-3-Backend)![Repo-Size](https://img.shields.io/github/repo-size/jakeschultz89/Project-3-Backend)![Contributors](https://img.shields.io/github/contributors/jakeschultz89/Project-3-Backend)![Heroku](https://heroku-badge.herokuapp.com/?app=heroku-badge)
 ![Imgur](https://i.imgur.com/yq7noDD.png)
 ![](https://i.imgur.com/lW48lzR.png)
-![Issues](https://img.shields.io/github/issues/jakeschultz89/Project-3-Backend)![Forks](https://img.shields.io/github/forks/jakeschultz89/Project-3-Backend)![License](https://img.shields.io/github/license/jakeschultz89/Project-3-Backend)![Repo-Size](https://img.shields.io/github/repo-size/jakeschultz89/Project-3-Backend)![Contributors](https://img.shields.io/github/contributors/jakeschultz89/Project-3-Backend)
+
 
 
 
