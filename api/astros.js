@@ -82,7 +82,8 @@ const deleteAstro = async (req, res) => {
     console.log(id);
     const result = await Astro.findByIdAndRemove(id);
     console.log(result);
-    res.redirect("/api/astros");
+    // res.redirect("/api/astros");
+    res.json({message: `${id} was deleted.`})
   } catch (error) {
     console.log("inside of DELETE route");
     console.log(error);
