@@ -35,8 +35,7 @@ const show = async (req, res) => {
 }
 
 // GET api/rockets/test (Public)
-router.get('/test', (req, res) => {
-    res.json({ msg: 'Rockets endpoint OK!'});
+router.get('/test', (req, res) => {res.json({ msg: 'Rockets endpoint OK!'});
 });
 
 // GET -> /api/rockets/

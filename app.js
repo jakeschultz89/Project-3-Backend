@@ -6,11 +6,6 @@ const cors = require('cors');
 const passport = require('passport');
 const PORT = process.env.PORT || 8080;
 
-// app.listen(app.get("port"), () => {
-//     console.log(`✅ PORT: ${app.get("port")} 🌟`);
-//     console.log(`http://localhost:${app.get("port")}`)
-// });
-
 // API
 const astros = require('./api/astros');
 const crews = require('./api/crews')

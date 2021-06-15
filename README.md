@@ -1,6 +1,7 @@
+![Issues](https://img.shields.io/github/issues/jakeschultz89/Project-3-Backend)![Forks](https://img.shields.io/github/forks/jakeschultz89/Project-3-Backend)![Repo-Size](https://img.shields.io/github/repo-size/jakeschultz89/Project-3-Backend)![Contributors](https://img.shields.io/github/contributors/jakeschultz89/Project-3-Backend)![Heroku](https://heroku-badge.herokuapp.com/?app=heroku-badge)
 ![Imgur](https://i.imgur.com/yq7noDD.png)
 ![](https://i.imgur.com/lW48lzR.png)
-![Issues](https://img.shields.io/github/issues/jakeschultz89/Project-3-Backend)![Forks](https://img.shields.io/github/forks/jakeschultz89/Project-3-Backend)![License](https://img.shields.io/github/license/jakeschultz89/Project-3-Backend)![Repo-Size](https://img.shields.io/github/repo-size/jakeschultz89/Project-3-Backend)![Contributors](https://img.shields.io/github/contributors/jakeschultz89/Project-3-Backend)
+
 
 
 
@@ -39,7 +40,7 @@ Fake-X uses a number of technologies to work properly:
 
 ## Installation
 
-Fake-X requires [Node.js](https://nodejs.org/) to run.
+Fake-X requires [node.js](https://nodejs.org/) to run.
 
 You first need to clone the repository
 ```
@@ -66,6 +67,7 @@ Run the command (mongod) first
 ```sh
 Then follow up with the (mongo) command in a seperate terminal window
 ```
+![](https://media.giphy.com/media/JZd6XgaIkIUJMbuxUP/giphy.gif)
 
 ## Code Snippets to be Proud of 
 
