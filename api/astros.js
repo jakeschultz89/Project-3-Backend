@@ -94,12 +94,10 @@ const deleteAstro = async (req, res) => {
 };
 
 // GET api/astros/test (Public)
-router.get("/test", (req, res) => {
-  res.json({ msg: "Astros endpoint OK!" });
+router.get("/test", (req, res) => {res.json({ msg: "Astros endpoint OK!" });
 });
 
 // GET -> /api/astros/
-
 router.get("/", passport.authenticate("jwt", { session: false }), index);
 // GET -> /api/astros/:name
 router.get("/:id", passport.authenticate("jwt", { session: false }), show);
